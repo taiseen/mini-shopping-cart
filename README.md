@@ -1,6 +1,6 @@
 6 Mar 2022
 
-# Mini Shopping Cart | [Live Link](https://taiseen.github.io/repo-name)
+# Mini Shopping Cart | [Live Link](mini-shopping-cart-demo.netlify.app)
 
 ## Using Tools & Language
 * React - jsx 

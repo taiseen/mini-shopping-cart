@@ -56,7 +56,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
     useEffect(() => {
         handlePrice();
-    }, [])
+    })
 
     const checkOut = () => {
         alert('Thank You')
