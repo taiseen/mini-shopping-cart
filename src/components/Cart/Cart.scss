@@ -1,0 +1,133 @@
+@import '../../style/mixing.scss';
+
+.cartItems {
+    min-height : 100vh;
+    padding-top: 12rem;
+
+    h2 {
+        font-size: 3rem;
+    }
+
+    .cartContainer {
+        margin-top: 1.5rem;
+
+        .productBox {
+            position       : relative;
+            display        : flex;
+            align-items    : center;
+            justify-content: space-between;
+            flex-wrap      : wrap;
+            border-bottom  : var(--border);
+            padding        : 1rem 0;
+
+            .info,
+            .controller,
+            .price {
+                flex      : 1 1 30rem;
+                margin    : 1rem 0;
+                text-align: center;
+            }
+
+            .controller,
+            .price {
+                display        : flex;
+                justify-content: flex-end;
+            }
+
+            .info {
+                display    : flex;
+                align-items: center;
+
+                img {
+                    height      : 12rem;
+                    width       : 14rem;
+                    margin-right: 2rem;
+                    // object-fit  : cover;
+                }
+
+                h2 {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .controller {
+
+                span {
+                    display         : inline-block;
+                    height          : 5rem;
+                    width           : 5rem;
+                    text-align      : center;
+                    line-height     : 5rem;
+                    background-color: #ddd;
+                    font-size       : 3rem;
+                    margin          : 0 .5rem;
+                    border-radius   : .5rem;
+
+                    &:nth-child(odd) {
+                        cursor     : pointer;
+                        font-weight: bold;
+
+                        &:hover {
+                            background-color: #bbb;
+                        }
+                    }
+                }
+            }
+
+            .price {
+
+                span {
+                    display: inline-block;
+                    margin : 0 1rem;
+                    padding: 1rem 1.5rem;
+
+                    border-radius: .5rem;
+                    @include fontStyle(2rem, var(--black));
+
+                    &:nth-child(odd) {
+                        background-color: greenyellow;
+                    }
+
+                    &:nth-child(even) {
+                        background-color: tomato;
+                        cursor          : pointer;
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .totalPrice {
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+        flex-wrap      : wrap;
+        margin-top     : 1.5rem;
+        @include fontStyle(3rem, var(--black));
+    }
+
+    .btn {
+        text-align: right;
+        margin-top: 2rem;
+
+        button {
+            padding      : 1rem 2rem;
+            border-radius: .5rem;
+            cursor       : pointer;
+            @include fontStyle(2rem, var(--black));
+
+            &:hover {
+                background-color: tomato;
+                color           : #fff;
+            }
+        }
+        
+        p{
+            @include fontStyle(2rem, var(--black));
+        }
+    }
+}

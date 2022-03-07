@@ -1,0 +1,44 @@
+@import '../../style/mixing.scss';
+
+.header {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    right           : 0;
+    z-index         : 101;
+    display         : flex;
+    align-items     : center;
+    justify-content : space-between;
+    background-color: var(--themeColor);
+    box-shadow      : var(--boxShadow);
+
+    .logo {
+        @include fontStyle(3.5rem, var(--black));
+        transition: .2s linear;
+
+        i {
+            margin-right: 1rem;
+        }
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    .cart {
+        @include fontStyle(3.5rem, var(--black));
+
+        span {
+            position        : relative;
+            top             : -1.5rem;
+            right           : 1.8rem;
+            z-index         : 1;
+            color           : #fb2600;
+            font-weight     : bold;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius   : 1rem;
+            padding         : .1rem 1rem;
+            font-size       : 2.5rem;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+
+/* 6 - Mar - 2022 */
+
+:root {
+    --themeColor: #cc8e2b;
+    --black     : #130f40;
+    --lightColor: #666;
+    --bgWhite   : #ddd;
+    --border    : .1rem solid var(--black);
+    --boxShadow : 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+
+* {
+    margin         : 0;
+    padding        : 0;
+    border         : 0;
+    outline        : none;
+    list-style     : none;
+    user-select    : none;
+    text-decoration: none;
+    text-transform : capitalize;
+    box-sizing     : border-box;
+    font-family    : 'Nunito', sans-serif;
+    transition     : all .1s linear;
+}
+
+@import 'mixing';
+
+
+/*
+    100% / 16px = 6.25%
+    6.25% == 1px 
+
+    6.25% * 10 = 62.5% 
+    62.5% == 10px
+*/
+html {
+    font-size         : 62.5%;
+    overflow-x        : hidden;
+    scroll-behavior   : smooth;
+    scroll-padding-top: 6rem;
+
+    &::-webkit-scrollbar {
+        width: 1rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--themeColor);
+    }
+}
+
+/* 
+Style Scale for all 
+but in responsive - its resizing at 991px
+*/
+header,
+section {
+    padding      : 2rem 7%;
+    margin-bottom: 3rem;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+
+@import 'responsive.scss';

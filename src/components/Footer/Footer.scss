@@ -1,0 +1,15 @@
+@import "../../style/mixing.scss";
+
+.footers {
+    text-align      : center;
+    background-color: var(--lightColor);
+
+    p {
+        padding-top: 1rem;
+        @include fontStyle(2rem, var(--black));
+
+        span {
+            color: var(--themeColor);
+        }
+    }
+}

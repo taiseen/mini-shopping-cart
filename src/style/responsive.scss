@@ -1,0 +1,43 @@
+@media (min-width: 1200px) {}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header,
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .cartItems .cartContainer .productBox {
+
+        .info,
+        .controller,
+        .price {
+            justify-content: center;
+            text-align     : center;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .cartItems {
+
+        h2{
+            text-align: center;
+        }
+        
+        .totalPrice {
+            padding-top: 1.5rem;
+            @include fontStyle(2rem, var(--black) !important);
+        }
+
+        .btn {
+            padding-top: 2rem;
+            text-align: center;
+        }
+    }
+}
