@@ -76,7 +76,7 @@
 
             .price {
 
-                span {
+                p {
                     display: inline-block;
                     margin : 0 1rem;
                     padding: 1rem 1.5rem;
@@ -91,7 +91,6 @@
                     &:nth-child(even) {
                         background-color: tomato;
                         cursor          : pointer;
-
                         &:hover {
                             color: #fff;
                         }

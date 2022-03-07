@@ -20,8 +20,8 @@ const ProductBox = ({ item, handleRemove, handleChange }) => {
             </div>
 
             <div className="price">
-                <span>net price : <strong>{price}</strong> | {0}</span>
-                <span onClick={() => handleRemove(id)}>remove</span>
+                <p>net price : {price} | <strong>{quantity * price}</strong></p>
+                <p onClick={() => handleRemove(id)}>remove</p>
             </div>
         </div>
     );
@@ -31,37 +31,33 @@ const ProductBox = ({ item, handleRemove, handleChange }) => {
 
 
 const Cart = ({ cart, setCart, handleChange }) => {
-    // console.log(cart);
 
     const [price, setPrice] = useState(0);
 
+    // Remove From Cart 
     const handleRemove = (id) => {
         const arr = cart.filter(item => item.id !== id);
+        cart.filter(item => item.id === id ? item.quantity = 1 : item);
         setCart(arr);
         handlePrice();
     }
 
+    // Calculate Total Cart Items
     const handlePrice = () => {
-        let ans = 0;
-        cart.map(item => (ans += item.quantity * item.price));
-        console.log(ans);
-        
-        let single = 0;
-        cart.map(pro => ( single = pro.quantity * pro.price))
-        console.log('single price ' , single);
-        
-
-        setPrice(ans);
+        let totalPrice = 0;
+        cart.map(item => (totalPrice += item.quantity * item.price));
+        setPrice(totalPrice);
     }
 
+    // Here have NO dependency array...
     useEffect(() => {
         handlePrice();
-    })
+    });
 
     const checkOut = () => {
-        alert('Thank You')
+        alert('❤ Thank You For Shopping... 🛒 \n🚩 Hope You Come Back Again... 🤗')
+        cart.filter(item => item.quantity = 1 );
         setCart([]);
-        setPrice(0);
     }
 
     return (
